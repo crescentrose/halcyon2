@@ -1,19 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf8">
-    <meta name="author" content="Ivan Oštrić">
-    <meta name="description" content="TODO: description">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+{{ define "main" }}
+<header class="banner" role="banner">
+  <h1>the halcyon blog</h1>
+</header>
 
-    {{ $style := resources.Get "sass/main.scss" | toCSS | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $style.Permalink }}">
-
-    <title>Halcyon</title>
-  </head>
-
-  <body>
-      <h1>It works!</h1>
-
-  </body>
-</html>
+<main>
+  {{ range .Pages }}
+  <li>
+    <a href="{{.Permalink}}">{{.Date.Format "2006-01-02"}} | {{.Title}}</a>
+  </li>
+  {{ end }}
+</main>
+{{ end }}

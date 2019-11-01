@@ -1,0 +1,13 @@
+$dark-color-title: #EAEAEA;
+$dark-color-content: #F7FBFC;
+$dark-color-background: #1E1E1E;
+
+body {
+  background-color: $dark-color-background;
+  color: $dark-color-content;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $dark-color-title;
+}
+

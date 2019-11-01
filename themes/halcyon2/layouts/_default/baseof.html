@@ -1,11 +1,23 @@
 <!DOCTYPE html>
-<html lang="{{ $.Site.Language }}">
+<html lang="{{ $.Site.LanguageCode }}">
+  <head>
+    <meta charset="utf8">
+    <meta name="author" content="{{$.Site.Params.author }}">
+    <meta name="description" content="{{if .IsHome}}{{ $.Site.Params.description }}{{else}}{{.Description}}{{end}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    {{ $style := resources.Get "sass/main.scss" | toCSS | minify | fingerprint }}
+    {{ $darkStyle := resources.Get "sass/dark.scss" | toCSS | minify | fingerprint }}
+    <link rel="preload" as="style" href="{{ $darkStyle.Permalink }}">
+    <link rel="preload" as="style" href="{{ $style.Permalink }}">
+
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+    <link rel="stylesheet" href="{{ $darkStyle.Permalink }}" media="screen and (prefers-color-scheme: dark)">
+
     {{- partial "head.html" . -}}
-    <body>
-        {{- partial "header.html" . -}}
-        <div id="content">
-        {{- block "main" . }}{{- end }}
-        </div>
-        {{- partial "footer.html" . -}}
-    </body>
+  </head>
+
+  <body>
+    {{- block "main" . }}{{- end }}
+  </body>
 </html>

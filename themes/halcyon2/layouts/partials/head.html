@@ -1,15 +1,3 @@
 {{ block "title" . }}
-<title>
-  {{ if .IsHome }}
-  {{ $.Site.Title }}
-  {{ with $.Site.Params.Subtitle }}
-  — {{ . }}
-  {{ end }}
-  {{ else }}
-  {{ .Title }} :: {{ $.Site.Title }}
-  {{ with $.Site.Params.Subtitle }}
-  — {{ . }}
-  {{ end }}
-  {{ end }}
-</title>
+<title>{{ if .IsHome }}{{ $.Site.Title }}{{ else }}{{ .Title }} :: {{ $.Site.Title }}{{ end }}</title>
 {{ end }}

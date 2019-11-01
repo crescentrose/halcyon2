@@ -1,3 +1,61 @@
+@charset 'utf-8';
+
+$color-title: #1E1E1E;
+$color-content: #364156;
+$color-background: #F7FBFC;
+
+$font-title:
+  'Source Code Pro',
+  'SFMono-Regular',
+  'Consolas',
+  'Liberation Mono',
+  'Menlo',
+  'Courier New',
+  'Courier',
+  monospace;
+
+$font-content:
+  system-ui,
+  -apple-system,
+  BlinkMacSystemFont,
+  'Segoe UI',
+  'Roboto',
+  'Oxygen',
+  'Ubuntu',
+  'Cantarell',
+  'Helvetica Neue',
+  'Helvetica',
+  'Arial',
+  sans-serif;
+
+$breakpoint-mobile: 768px;
+
+@use './reset';
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700&display=swap');
+
 body {
-  background-color: red;
+  background-color: $color-background;
+  color: $color-content;
+  font-family: $font-content;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-title;
+  font-weight: 700;
+  color: $color-title;
+}
+
+header.banner {
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  @media screen and (min-width: $breakpoint-mobile) {
+    padding: 2rem;
+  }
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    padding: 1rem;
+  }
 }

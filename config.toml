@@ -1,4 +1,8 @@
-baseURL = "http://example.org/"
+baseURL = "https://halcyon.hr"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "the halcyon blog"
 theme = "halcyon2"
+
+[params]
+description = "TODO"
+author = "Ivan Oštrić"
