@@ -1,13 +1,43 @@
 {{ define "main" }}
-<header class="banner" role="banner">
-  <h1>the halcyon blog</h1>
-</header>
+<div class="horizontal container">
+  <header class="horizontal banner" role="banner">
+    <h1>The Halcyon Blog</h1>
+    <p>Occasional blog posts about programming, tech, and other general issues of
+    interest to a common nerd.</p>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Archive</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<main>
-  {{ range .Pages }}
-  <li>
-    <a href="{{.Permalink}}">{{.Date.Format "2006-01-02"}} | {{.Title}}</a>
-  </li>
-  {{ end }}
-</main>
+  <main class="post-list">
+    {{ range where .Site.RegularPages "Type" "posts" }}
+    {{ $category := index .Params.categories 0 }}
+    <section class="post-preview">
+
+      <span class="badge post-label" data-label="{{ $category }}">
+        {{ $category }}
+      </span>
+
+      <a href="{{.Permalink}}">
+        <h2>
+          {{.Title}}
+        </h2>
+      </a>
+      <p>{{.Summary}}</p>
+      <p class="meta">
+      {{.Date.Format "January 2, 2006" }} &mdash; {{.ReadingTime}} minute read
+      </p>
+      <p></p>
+    </section>
+    {{ end }}
+
+    <footer role="contentinfo">
+      &copy; 2019. Made with ✨.
+    </footer>
+  </main>
+</div>
 {{ end }}

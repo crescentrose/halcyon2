@@ -2,8 +2,10 @@
 title: "Hello World"
 date: 2019-10-30T22:21:48+01:00
 draft: false
+categories:
+  - Meta
 ---
 
-# My first post
+Hello there! This is my first post on my blog. <!--more-->
 
-Hello there!
+This should not render on my frontpage.

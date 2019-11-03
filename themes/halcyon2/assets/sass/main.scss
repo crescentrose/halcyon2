@@ -3,6 +3,10 @@
 $color-title: #1E1E1E;
 $color-content: #364156;
 $color-background: #F7FBFC;
+$color-muted: #B5B9C1;
+
+$color-label-background: #FDEF8D;
+$color-label-content: #A29331;
 
 $font-title:
   'Source Code Pro',
@@ -28,7 +32,7 @@ $font-content:
   'Arial',
   sans-serif;
 
-$breakpoint-mobile: 768px;
+$breakpoint-mobile: 835px;
 
 @use './reset';
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700&display=swap');
@@ -45,11 +49,26 @@ h1, h2, h3, h4, h5, h6 {
   color: $color-title;
 }
 
+.container {
+  display: flex;
+  margin: 10px;
+
+  &.horizontal {
+    @media screen and (min-width: $breakpoint-mobile) {
+      flex-direction: row;
+    }
+
+    @media screen and (max-width: $breakpoint-mobile) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+
 header.banner {
-  height: 50vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
 
   @media screen and (min-width: $breakpoint-mobile) {
     padding: 2rem;
@@ -58,4 +77,94 @@ header.banner {
   @media screen and (max-width: $breakpoint-mobile) {
     padding: 1rem;
   }
+
+  &.horizontal {
+    @media screen and (min-width: $breakpoint-mobile) {
+      width: 40vw;
+      height: 100vh;
+    }
+
+    @media screen and (max-width: $breakpoint-mobile) {
+      margin: 10px 0 10px 0;
+    }
+  }
+
+  &.vertical {
+    width: 100vw;
+    height: 40vh;
+  }
+
+  h1 {
+    text-transform: lowercase;
+  }
+}
+
+.post-list {
+  @media screen and (min-width: $breakpoint-mobile) {
+    padding-top: 3rem;
+  }
+  padding-bottom: 3rem;
+}
+
+.badge {
+  border-bottom: 2px solid $color-label-content;
+  background-color: $color-label-background;
+  color: $color-label-content;
+  padding: 0.1rem 0.5rem 0.1rem 0.5rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+section.post-preview {
+  margin-bottom: 3rem;
+
+  * > h2 {
+    margin: 0.25rem 0 0.25rem 0;
+  }
+
+  .meta {
+    color: $color-muted;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    margin-top: -0.5rem;
+  }
+}
+
+a {
+  color: $color-title;
+  text-decoration-skip-ink: auto;
+  -webkit-text-decoration-skip: ink;
+
+}
+
+a:hover > * {
+  color: $color-content;
+}
+
+nav {
+  ul {
+    padding: 0;
+    text-transform: lowercase;
+
+    @media screen and (max-width: $breakpoint-mobile) {
+      text-align: center;
+    }
+
+    li {
+      @media screen and (min-width: $breakpoint-mobile) {
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+
+      @media screen and (max-width: $breakpoint-mobile) {
+        display: inline-block;
+        margin: 0 0.5rem 0 0.5rem;
+      }
+    }
+  }
+}
+
+footer {
+  font-size: 0.75rem;
+  color: $color-muted;
 }
