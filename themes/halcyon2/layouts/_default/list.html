@@ -1,0 +1,46 @@
+{{ define "main" }}
+
+<div class="horizontal container">
+  <header class="vertical banner" role="banner">
+    <h1>the halcyon archives</h1>
+    <p>{{ .Site.Params.description }}</p>
+    <nav>
+      <ul>
+        <li><a href="{{ "/" | relURL }}">home</a></li>
+        <li><span aria-hidden="true">→</span> archive</li>
+        <li><a href="{{ "/about" | relURL }}">about</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="post-list">
+    {{ $posts := after 5 (where .Site.RegularPages "Type" "posts") }}
+    {{ if gt (len $posts) 0 }}
+    {{ range $posts }}
+    <section class="post-preview">
+
+      <span class="badges">
+        {{ range .Param "categories" }}
+        <span class="badge post-label">
+          {{ . }}
+        </span>
+        {{ end }}
+      </span>
+
+      <a href="{{.Permalink}}">
+        <h2>
+          {{.Title}}
+        </h2>
+      </a>
+      <p class="meta">
+      {{.Date.Format "January 2, 2006" }} &mdash; {{.ReadingTime}} minute read
+      </p>
+    </section>
+    {{ end }}
+    {{ else }}
+    <section>
+      There are no archived posts yet!
+    </section>
+    {{ end }}
+  </main>
+</div>
+{{ end }}

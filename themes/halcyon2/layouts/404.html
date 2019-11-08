@@ -8,8 +8,10 @@
     <nav>
       <ul>
         <li><a href="{{ "/" | relURL }}">Home</a></li>
-        <li><a href="#">Archive</a></li>
-        <li><a href="#">About</a></li>
+        {{ if gt (len (where .Site.RegularPages "Type" "posts")) 5 }}
+        <li><a href="{{ "/posts" | relURL }}">archive</a></li>
+        {{ end }}
+        <li><a href="{{ "/about" | relURL }}">about</a></li>
       </ul>
     </nav>
   </header>
