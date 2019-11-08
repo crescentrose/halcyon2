@@ -46,6 +46,11 @@ button {
   }
 }
 
-.icon {
-  fill: $dark-color-title;
+a.icon {
+  svg {
+    fill: $dark-color-title;
+  }
+  svg:hover {
+    fill: $dark-color-content;
+  }
 }

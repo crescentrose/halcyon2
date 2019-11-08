@@ -1,15 +1,17 @@
 {{ define "main" }}
 
 <div class="vertical post container">
-  <header class="horizontal banner" role="banner">
-    <h1>{{ .Title }}</h1>
-    <p class="meta">
-      {{.Date.Format "January 2, 2006" }} &mdash; {{.ReadingTime}} minute read
-    </p>
-  </header>
-
   <article>
-    {{ .Content }}
+    <header class="horizontal banner" role="banner">
+      <h1>{{ .Title }}</h1>
+      <p class="meta">
+        {{.Date.Format "January 2, 2006" }} &mdash; {{.ReadingTime}} minute read
+      </p>
+    </header>
+
+    <div>
+      {{ .Content }}
+    </div>
   </article>
 
   <button class="share">

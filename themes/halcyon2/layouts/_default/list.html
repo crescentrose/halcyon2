@@ -1,7 +1,7 @@
 {{ define "main" }}
 
 <div class="horizontal container">
-  {{ partial "nav.html" }}
+  {{ partial "nav.html" . }}
   <main class="post-list">
     {{ $posts := after 5 (where .Site.RegularPages "Type" "posts") }}
     {{ if gt (len $posts) 0 }}

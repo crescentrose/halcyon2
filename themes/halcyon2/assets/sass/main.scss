@@ -222,9 +222,17 @@ button {
   }
 }
 
-.icon {
-  width: 1em;
-  height: 1em;
-  fill: $color-title;
-  margin-right: 5px;
+a.icon {
+  text-decoration: none;
+
+  svg {
+    width: 1em;
+    height: 1em;
+    fill: $color-title;
+    margin-right: 5px;
+  }
+
+  svg:hover {
+    fill: $color-content;
+  }
 }
