@@ -33,6 +33,7 @@ $font-content:
   sans-serif;
 
 $breakpoint-mobile: 835px;
+$breakpoint-web: 836px;
 
 @use './reset';
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700&display=swap');
@@ -41,6 +42,8 @@ body {
   background-color: $color-background;
   color: $color-content;
   font-family: $font-content;
+  font-size: 14pt;
+  line-height: 1.4;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -54,7 +57,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 10px;
 
   &.horizontal {
-    @media screen and (min-width: $breakpoint-mobile) {
+    @media screen and (min-width: $breakpoint-web) {
       flex-direction: row;
     }
 
@@ -63,6 +66,11 @@ h1, h2, h3, h4, h5, h6 {
       align-items: center;
     }
   }
+
+  &.vertical {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 header.banner {
@@ -70,16 +78,16 @@ header.banner {
   flex-direction: column;
   justify-content: center;
 
-  @media screen and (min-width: $breakpoint-mobile) {
+  @media screen and (min-width: $breakpoint-web) {
     padding: 2rem;
   }
 
   @media screen and (max-width: $breakpoint-mobile) {
-    padding: 1rem;
+    text-align: center;
   }
 
-  &.horizontal {
-    @media screen and (min-width: $breakpoint-mobile) {
+  &.vertical {
+    @media screen and (min-width: $breakpoint-web) {
       width: 40vw;
       height: 100vh;
     }
@@ -89,9 +97,14 @@ header.banner {
     }
   }
 
-  &.vertical {
-    width: 100vw;
+  &.horizontal {
     height: 40vh;
+
+    @media screen and (min-width: $breakpoint-web) {
+      padding: 0 10px 0 10px;
+      width: $breakpoint-web;
+      text-align: center;
+    }
   }
 
   h1 {
@@ -100,9 +113,11 @@ header.banner {
 }
 
 .post-list {
-  @media screen and (min-width: $breakpoint-mobile) {
+
+  @media screen and (min-width: $breakpoint-web) {
     padding-top: 3rem;
   }
+
   padding-bottom: 3rem;
 }
 
@@ -121,13 +136,13 @@ section.post-preview {
   * > h2 {
     margin: 0.25rem 0 0.25rem 0;
   }
+}
 
-  .meta {
-    color: $color-muted;
-    text-transform: uppercase;
-    font-size: 0.75rem;
-    margin-top: -0.5rem;
-  }
+.meta {
+  color: $color-muted;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  margin-top: -0.5rem;
 }
 
 a {
@@ -151,7 +166,7 @@ nav {
     }
 
     li {
-      @media screen and (min-width: $breakpoint-mobile) {
+      @media screen and (min-width: $breakpoint-web) {
         display: block;
         margin-bottom: 0.5rem;
       }
@@ -165,6 +180,44 @@ nav {
 }
 
 footer {
+  text-align: center;
   font-size: 0.75rem;
   color: $color-muted;
+  margin: 10px;
+}
+
+.post {
+  article {
+    @media screen and (max-width: $breakpoint-mobile) {
+      width: 100%;
+    }
+
+    @media screen and (min-width: $breakpoint-web) {
+      width: $breakpoint-web;
+    }
+
+    margin-bottom: 2rem;
+  }
+
+  .return-link {
+    margin-top: 2rem;
+  }
+}
+
+button {
+  padding: 0.75rem;
+  border-radius: 7px;
+  font-size: 1rem;
+  background-color: $color-background;
+  color: $color-title;
+  border: 1px solid $color-title;
+  display: inline-flex;
+  align-items: center;
+
+  svg {
+    margin-right: 0.5em;
+    width: 1em;
+    height: 1em;
+    fill: $color-title;
+  }
 }

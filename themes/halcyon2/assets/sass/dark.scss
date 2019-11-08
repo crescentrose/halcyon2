@@ -21,10 +21,8 @@ h1, h2, h3, h4, h5, h6 {
   background-color: $color-label-background;
 }
 
-section.post-preview {
-  .meta {
-    color: $dark-color-muted;
-  }
+.meta {
+  color: $dark-color-muted;
 }
 
 a {
@@ -37,4 +35,13 @@ a:hover > * {
 
 footer {
   color: $dark-color-muted;
+}
+
+button {
+  background-color: $dark-color-background;
+  color: $dark-color-title;
+  border: 1px solid $dark-color-title;
+  svg {
+    fill: $dark-color-title;
+  }
 }

@@ -4,5 +4,5 @@ title = "the halcyon blog"
 theme = "halcyon2"
 
 [params]
-description = "TODO"
+description = "Occasional blog posts about programming, tech, and other general issues of interest to a common nerd."
 author = "Ivan Oštrić"

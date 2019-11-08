@@ -1,9 +1,8 @@
 {{ define "main" }}
 <div class="horizontal container">
-  <header class="horizontal banner" role="banner">
+  <header class="vertical banner" role="banner">
     <h1>The Halcyon Blog</h1>
-    <p>Occasional blog posts about programming, tech, and other general issues of
-    interest to a common nerd.</p>
+    <p>{{ .Site.Params.description }}</p>
     <nav>
       <ul>
         <li><a href="#">Home</a></li>
@@ -15,11 +14,14 @@
 
   <main class="post-list">
     {{ range where .Site.RegularPages "Type" "posts" }}
-    {{ $category := index .Params.categories 0 }}
     <section class="post-preview">
 
-      <span class="badge post-label" data-label="{{ $category }}">
-        {{ $category }}
+      <span class="badges">
+        {{ range .Param "categories" }}
+        <span class="badge post-label">
+          {{ . }}
+        </span>
+        {{ end }}
       </span>
 
       <a href="{{.Permalink}}">
@@ -31,13 +33,13 @@
       <p class="meta">
       {{.Date.Format "January 2, 2006" }} &mdash; {{.ReadingTime}} minute read
       </p>
-      <p></p>
     </section>
     {{ end }}
 
-    <footer role="contentinfo">
-      &copy; 2019. Made with ✨.
-    </footer>
   </main>
 </div>
+
+<footer role="contentinfo">
+  &copy; 2019. Made with ✨.
+</footer>
 {{ end }}
