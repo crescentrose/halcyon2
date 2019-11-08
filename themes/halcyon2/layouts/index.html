@@ -1,19 +1,6 @@
 {{ define "main" }}
 <div class="horizontal container">
-  <header class="vertical banner" role="banner">
-    <h1>the halcyon blog</h1>
-    <p>{{ .Site.Params.description }}</p>
-    <nav>
-      <ul>
-        <li><span aria-hidden="true">→</span> home</li>
-        {{ if gt (len (where .Site.RegularPages "Type" "posts")) 5 }}
-        <li><a href="{{ "/posts" | relURL }}">archive</a></li>
-        {{ end }}
-        <li><a href="{{ "/about" | relURL }}">about</a></li>
-      </ul>
-    </nav>
-  </header>
-
+  {{ partial "nav.html" }}
   <main class="post-list">
     {{ $posts := (where .Site.RegularPages "Type" "posts") }}
     {{ range first 5 ($posts) }}
