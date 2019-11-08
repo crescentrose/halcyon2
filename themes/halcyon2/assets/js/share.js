@@ -16,7 +16,9 @@ function openShareScreen() {
     })
       .catch(() => {/* do absolutely nothing */});
   } else {
-    alert('please implement non-native share sheet');
+    document.querySelector(".share-grid").style.display = "block";
+    document.querySelector("button.share").style.display = "none";
+    document.querySelector("button.share").setAttribute("aria-expanded", "true");
   }
 }
 

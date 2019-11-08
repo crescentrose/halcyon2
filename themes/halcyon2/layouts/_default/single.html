@@ -14,7 +14,7 @@
     </div>
   </article>
 
-  <button class="share">
+  <button class="share" aria-controls="share-grid" aria-expanded="false">
     <svg 
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
@@ -24,6 +24,8 @@
     </svg>
     share
   </button>
+
+  {{ partial "share.html" . }}
 
   <div class="return-link" role="navigation">
     <a href="{{ "/" | relURL }}">← Return to home</a>
