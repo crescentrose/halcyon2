@@ -3,6 +3,11 @@ languageCode = "en-us"
 title = "the halcyon blog"
 theme = "halcyon2"
 
+pygmentsCodefences = true
+pygmentsCodefencesGuessSyntax = true
+pygmentsUseClasses = true
+pygmentsOptions="linenos=table"
+
 [params]
 description = "Occasional blog posts about programming, tech, and other general issues of interest to a common nerd."
 author = "Ivan Oštrić"

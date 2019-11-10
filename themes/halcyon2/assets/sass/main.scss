@@ -36,6 +36,7 @@ $breakpoint-mobile: 835px;
 $breakpoint-web: 836px;
 
 @use './reset';
+@import './syntax';
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700&display=swap');
 
 body {
@@ -241,4 +242,12 @@ a.icon {
   font-size: 1.5rem;
   padding: 5px;
   display: none;
+}
+
+div.chroma {
+  padding: 1em;
+}
+
+pre {
+  margin: 0;
 }
