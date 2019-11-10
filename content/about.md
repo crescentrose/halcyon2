@@ -55,6 +55,11 @@ provide attribution.
 
 This website uses icons by [Iconmonstr](https://iconmonstr.com).
 
+This website uses the [Source Code Pro
+font](https://github.com/adobe-fonts/source-code-pro) by Adobe. Please [click
+here to review the Source Code Pro
+license](https://github.com/adobe-fonts/source-code-pro/blob/release/LICENSE.md).
+
 ### Privacy & Data Collection Notices
 
 The Halcyon blog does not store cookies and does not collect any personal data,
