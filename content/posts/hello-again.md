@@ -10,6 +10,8 @@ I love my girlfriend & future wife Lucy 💗
 
 and my pooping cat
 
+<!--more-->
+
 ```ruby
 def hello
   puts Hello.world(:greeting, "Hi!")
