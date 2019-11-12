@@ -6,6 +6,17 @@
     <meta name="description" content="{{if .IsHome}}{{ $.Site.Params.description }}{{else}}{{.Description}}{{end}}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=M4KJaedJLj">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=M4KJaedJLj">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=M4KJaedJLj">
+    <link rel="manifest" href="/site.webmanifest?v=M4KJaedJLj">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg?v=M4KJaedJLj" color="#1d4d7f">
+    <link rel="shortcut icon" href="/favicon.ico?v=M4KJaedJLj">
+    <meta name="apple-mobile-web-app-title" content="Halcyon">
+    <meta name="application-name" content="Halcyon">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#1d4d7f">
+
     {{ $style := resources.Get "sass/main.scss" | toCSS | minify | fingerprint }}
     {{ $darkStyle := resources.Get "sass/dark.scss" | toCSS | minify | fingerprint }}
     <link rel="preload" as="style" href="{{ $darkStyle.Permalink }}">
@@ -15,7 +26,7 @@
     <link rel="stylesheet" href="{{ $darkStyle.Permalink }}" media="screen and (prefers-color-scheme: dark)">
 
     {{ range .AlternativeOutputFormats -}}
-        {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
     {{ end -}}
 
     {{- partial "head.html" . -}}

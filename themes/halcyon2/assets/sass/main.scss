@@ -45,6 +45,7 @@ $breakpoint-web: 836px;
         url('/fonts/SourceCodePro-Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
+    font-display: auto;
 }
 
 @font-face {
@@ -54,6 +55,7 @@ $breakpoint-web: 836px;
         url('/fonts/SourceCodePro-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    font-display: auto;
 }
 
 body {
@@ -135,10 +137,28 @@ header.banner {
   h1 {
     text-transform: lowercase;
   }
+
+  .logo {
+    width: 96px;
+    height: auto;
+
+    // This would be fun!
+    // @media screen and (min-width: $breakpoint-web) {
+    //   @media screen and (prefers-color-scheme: light) {
+    //     z-index: 10;
+    //     margin-bottom: -73px;
+    //     margin-left: 88px;
+    //   }
+    // }
+
+    @media screen and (max-width: $breakpoint-mobile) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
 }
 
 .post-list {
-
   @media screen and (min-width: $breakpoint-web) {
     padding-top: 3rem;
   }
