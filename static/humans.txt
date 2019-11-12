@@ -1,0 +1,14 @@
+/* TEAM */
+  Author: Ivan Oštrić
+  Site: halcyon.hr
+  Twitter: @somwhatparanoid
+  Location: HR
+
+/* THANKS */
+
+  Lucy, for the initial drawing of the birb.svg!
+
+/* SITE */
+
+  Generated with Hugo, coded in Vim, written with 💖
+
