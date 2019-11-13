@@ -6,13 +6,21 @@
     <meta name="description" content="{{if .IsHome}}{{ $.Site.Params.description }}{{else}}{{.Description}}{{end}}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
+    <meta property="og:title" content="{{ if .IsHome }}{{ $.Site.Title }}{{ else }}{{ .Title }} :: {{ $.Site.Title }}{{ end }}">
+    <meta property="og:description" content="{{if .IsHome}}{{ $.Site.Params.description }}{{else}}{{.Description}}{{end}}">
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:image" content="https://www.halcyon.hr/cover.png">
+    <meta property="og:site_name" content="the halcyon blog">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@somwhatparanoid">
+
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=M4KJaedJLj">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=M4KJaedJLj">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=M4KJaedJLj">
     <link rel="manifest" href="/site.webmanifest?v=M4KJaedJLj">
     <link rel="mask-icon" href="/safari-pinned-tab.svg?v=M4KJaedJLj" color="#1d4d7f">
     <link rel="shortcut icon" href="/favicon.ico?v=M4KJaedJLj">
-    <link type="text/plain" rel="author" href="https://halcyon.hr/humans.txt" />
+    <link type="text/plain" rel="author" href="https://www.halcyon.hr/humans.txt" />
 
     <meta name="apple-mobile-web-app-title" content="Halcyon">
     <meta name="application-name" content="Halcyon">

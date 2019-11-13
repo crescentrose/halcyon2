@@ -1,4 +1,4 @@
-baseURL = "https://halcyon.hr"
+baseURL = "https://www.halcyon.hr"
 languageCode = "en-us"
 title = "the halcyon blog"
 theme = "halcyon2"
