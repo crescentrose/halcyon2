@@ -63,8 +63,8 @@ license](https://github.com/adobe-fonts/source-code-pro/blob/release/LICENSE.md)
 
 ### Privacy & Data Collection Notices
 
-The Halcyon blog does not store cookies and does not collect any personal data,
-not even in server logs which are anonymized, rotated regularly and used
-exclusively for security and diagnostic purposes. No advertising, analytics or
-telemetry tools are being used, and no requests to any third parties are being
-made from my end. As it should be.
+The Halcyon blog does not store cookies and does not collect any personal data.
+The site is hosted with [Render](http://render.com), so I have no insight into
+the server logs. No advertising, analytics or telemetry tools are being used,
+and no requests to any third parties are being made from my end. As it should
+be.
