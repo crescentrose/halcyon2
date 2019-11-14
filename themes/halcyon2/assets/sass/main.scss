@@ -3,6 +3,7 @@
 $color-title: #1E1E1E;
 $color-content: #364156;
 $color-background: #F7FBFC;
+$color-light: #747c8b;
 $color-muted: #B5B9C1;
 
 $color-label-background: #FDEF8D;
@@ -228,7 +229,7 @@ nav {
 footer {
   text-align: center;
   font-size: 0.75rem;
-  color: $color-muted;
+  color: $color-light;
   margin: 10px;
 }
 
@@ -272,15 +273,19 @@ a.icon {
   text-decoration: none;
 
   svg {
-    width: 1em;
-    height: 1em;
+    width: 1.5rem;
+    height: 1.5rem;
     fill: $color-title;
-    margin-right: 5px;
+    margin-right: 1rem;
   }
 
   svg:hover {
     fill: $color-content;
   }
+}
+
+.icons > a:last-child > svg {
+  margin-right: 0;
 }
 
 .share-grid {
