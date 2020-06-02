@@ -5,6 +5,7 @@ $color-content: #364156;
 $color-background: #F7FBFC;
 $color-light: #747c8b;
 $color-muted: #B5B9C1;
+$color-extra-muted: #e8e9eb;
 
 $color-label-background: #FDEF8D;
 $color-label-content: #A29331;
@@ -80,9 +81,27 @@ h1, h2, h3, h4, h5, h6 {
   color: $color-title;
 }
 
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
 .container {
   display: flex;
   margin: 10px;
+
+  @media screen and (min-width: $breakpoint-web) {
+    padding: 10px;
+  }
 
   &.horizontal {
     @media screen and (min-width: $breakpoint-web) {
@@ -126,12 +145,24 @@ header.banner {
   }
 
   &.horizontal {
-    height: 40vh;
-
     @media screen and (min-width: $breakpoint-web) {
       padding: 0 10px 0 10px;
       width: $breakpoint-web;
       text-align: center;
+    }
+
+    img.cover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -10;
+      object-fit: cover;
+      height: 400px;
+      width: 100%;
+
+      @media screen and (max-width: $breakpoint-mobile) {
+        height: 200px;
+      }
     }
   }
 
@@ -147,21 +178,25 @@ header.banner {
     // @media screen and (min-width: $breakpoint-web) {
     //   @media screen and (prefers-color-scheme: light) {
     //     z-index: 10;
-    //     margin-bottom: -73px;
-    //     margin-left: 88px;
+    //     margin-bottom: -74.5px;
+    //     margin-left: 103px;
     //   }
     // }
 
-    @media screen and (max-width: $breakpoint-mobile) {
-      margin-left: auto;
-      margin-right: auto;
-    }
+    // @media screen and (max-width: $breakpoint-mobile) {
+    //   margin-left: auto;
+    //   margin-right: auto;
+    // }
   }
 }
 
 .post-list {
   @media screen and (min-width: $breakpoint-web) {
     padding-top: 3rem;
+  }
+
+  @media screen and (max-width: $breakpoint-web) {
+    min-width: 100%;
   }
 
   padding-bottom: 3rem;
@@ -178,6 +213,10 @@ header.banner {
 
 section.post-preview {
   max-width: 60vw;
+
+  @media screen and (max-width: $breakpoint-web) {
+    max-width: 100%;
+  }
   margin-bottom: 3rem;
 
   * > h2 {
@@ -244,6 +283,36 @@ footer {
     }
 
     margin-bottom: 2rem;
+
+    &.with-cover-image {
+      @media screen and (min-width: $breakpoint-web) {
+        margin-top: 400px; // Accommodate for banner image
+      }
+
+      @media screen and (max-width: $breakpoint-mobile) {
+        margin-top: 200px; // Accommodate for banner image
+      }
+    }
+
+    aside {
+      margin-top: 1.6rem;
+
+      &.callout {
+        background-color: $color-extra-muted;
+        padding: 20px 20px 20px 50px;
+        position: relative;
+
+        .icon {
+          word-break: normal;
+          position: absolute;
+          display: inline;
+          left: 15px;
+          top: 15px;
+          font-size: 25px;
+          width: 25px;
+        }
+      }
+    }
   }
 
   .return-link {
@@ -301,4 +370,13 @@ div.chroma {
 
 pre {
   margin: 0;
+}
+
+.chroma {
+  overflow: scroll;
+  padding: 1rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
 }

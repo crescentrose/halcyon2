@@ -6,7 +6,7 @@ theme = "halcyon2"
 pygmentsCodefences = true
 pygmentsCodefencesGuessSyntax = true
 pygmentsUseClasses = true
-pygmentsOptions="linenos=table"
+pygmentsOptions="linenos=false"
 
 [params]
 description = "Occasional blog posts about programming, tech, and other general issues of interest to a common nerd."

@@ -9,10 +9,22 @@
     <meta property="og:title" content="{{ if .IsHome }}{{ $.Site.Title }}{{ else }}{{ .Title }} :: {{ $.Site.Title }}{{ end }}">
     <meta property="og:description" content="{{if .IsHome}}{{ $.Site.Params.description }}{{else}}{{.Description}}{{end}}">
     <meta property="og:url" content="{{ .Permalink }}">
-    <meta property="og:image" content="https://www.halcyon.hr/cover.png">
     <meta property="og:site_name" content="the halcyon blog">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@somwhatparanoid">
+
+    {{ $coverPath := $.Page.Params.cover }}
+    {{ if $coverPath }}
+      {{ $cover := $.Page.Resources.GetMatch (string $coverPath) }}
+      {{ if $cover }}
+        {{ $coverResized := $cover.Fit "1200x630" }}
+        <meta property="og:image" content="{{ $coverResized.Permalink }}">
+      {{ else }}
+      <meta property="og:image" content="{{ "/static/cover.png" | absURL }}">
+      {{ end }}
+    {{ else }}
+    <meta property="og:image" content="{{ "/static/cover.png" | absURL }}">
+    {{ end }}
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=M4KJaedJLj">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=M4KJaedJLj">

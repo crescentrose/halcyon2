@@ -7,7 +7,6 @@
     {{ if gt (len $posts) 0 }}
     {{ range $posts }}
     <section class="post-preview">
-
       <span class="badges">
         {{ range .Param "categories" }}
         <span class="badge post-label">
@@ -15,7 +14,6 @@
         </span>
         {{ end }}
       </span>
-
       <a href="{{.Permalink}}">
         <h2>
           {{.Title}}

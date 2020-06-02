@@ -5,7 +5,6 @@
     {{ $posts := (where .Site.RegularPages "Type" "posts") }}
     {{ range first 5 ($posts) }}
     <section class="post-preview">
-
       <span class="badges">
         {{ range .Param "categories" }}
         <span class="badge post-label">
@@ -13,7 +12,6 @@
         </span>
         {{ end }}
       </span>
-
       <a href="{{.Permalink}}">
         <h2>
           {{.Title}}
@@ -25,7 +23,6 @@
       </p>
     </section>
     {{ end }}
-
     {{ if gt (len $posts) 5 }}
     <section>
       Looking for something that's not as recent? Chances are you will find it
@@ -36,7 +33,7 @@
 </div>
 
 <footer role="contentinfo">
-  &copy; 2019. Made with ✨ &mdash;&nbsp;
+  &copy; 2020. Made with ✨ &mdash;&nbsp;
   <a href="/about#copyright-notices">Privacy &amp; copyright notices</a>.
 </footer>
 {{ end }}

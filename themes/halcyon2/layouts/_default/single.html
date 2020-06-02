@@ -1,8 +1,14 @@
 {{ define "main" }}
 
 <div class="vertical post container">
-  <article>
+  <article class="with-cover-image">
     <header class="horizontal banner" role="banner">
+      {{ $coverPath := .Params.cover }}
+      {{ $cover := .Resources.GetMatch (string $coverPath) }}
+      {{ if $cover }}
+        {{ $coverResized := $cover.Resize "2160x" }}
+        <img src="{{ $coverResized.Permalink }}" alt="{{ .Params.cover_alt }}" class="cover">
+      {{ end }}
       <h1>{{ .Title }}</h1>
       <p class="meta">
         {{.Date.Format "January 2, 2006" }} &mdash; {{.ReadingTime}} minute read
