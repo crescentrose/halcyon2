@@ -3,13 +3,13 @@
 <div class="horizontal container">
   {{ partial "nav.html" . }}
   <main class="post-list">
-    {{ $posts := after 5 (where .Site.RegularPages "Type" "posts") }}
+    {{ $posts := .Pages }}
     {{ if gt (len $posts) 0 }}
     {{ range $posts }}
     <section class="post-preview">
       <span class="badges">
         {{ range .Param "categories" }}
-        <span class="badge post-label">
+        <span class="badge category">
           {{ . }}
         </span>
         {{ end }}
@@ -26,7 +26,7 @@
     {{ end }}
     {{ else }}
     <section>
-      There are no archived posts yet!
+      There are no posts here yet!
     </section>
     {{ end }}
   </main>

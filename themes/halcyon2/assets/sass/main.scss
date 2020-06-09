@@ -209,6 +209,7 @@ header.banner {
   padding: 0.1rem 0.5rem 0.1rem 0.5rem;
   font-size: 0.8rem;
   text-transform: uppercase;
+  margin-right: 1rem;
 }
 
 section.post-preview {
@@ -395,4 +396,11 @@ figure > figcaption {
 
 pre {
   margin-bottom: 1rem;
+}
+
+blockquote {
+  margin-left: 0;
+  border-left: 5px solid $color-extra-muted;
+  padding-left: 1rem;
+  font-weight: lighter;
 }
