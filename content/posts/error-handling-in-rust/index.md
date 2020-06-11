@@ -223,7 +223,7 @@ This works great if you're calling functions that all have the same error type -
 
 This is not the same as `CustomError` . Your first instinct may be to change the return type so that it returns a `std::error::Error`, after all, that is the trait that is implemented both by our custom error types and the standard library ones. 
 
-However, it turns out it's not so simple: since those are ultimately different types and the compiler won't know how much memory to allocate for each one, Rust refuses to build that program. This has 
+However, it turns out it's not so simple: since those are ultimately different types and the compiler won't know how much memory to allocate for each one, Rust refuses to build that program.
 
 To alleviate that, you can [use the Box type](https://doc.rust-lang.org/std/boxed/index.html). Using a Box, we allocate the memory required for our errors dynamically on the heap. Our code then looks something like this:
 
