@@ -12,6 +12,7 @@
     <meta property="og:site_name" content="the halcyon blog">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@somwhatparanoid">
+    <meta name="twitter:creator" content="@somwhatparanoid">
 
     {{ $coverPath := $.Page.Params.cover }}
     {{ if $coverPath }}
@@ -56,5 +57,6 @@
 
   <body>
     {{- block "main" . }}{{- end }}
+    {{- partial "footer.html" . -}}
   </body>
 </html>
