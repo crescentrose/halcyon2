@@ -7,21 +7,21 @@
 .container {
   display: flex;
 
-  @include web {
-    margin: $spacing-tiny-2;
-    padding: $spacing-tiny-2;
+  @include at-least(desktop) {
+    margin: $spacing-small-1;
+    padding: $spacing-small-1;
   }
 
-  @include mobile {
-    padding: $spacing-tiny-1;
+  @include at-most(tablet) {
+    padding: $spacing-tiny-3;
   }
 
   &.horizontal {
-    @include web {
+    @include at-least(desktop) {
       flex-direction: row;
     }
 
-    @include mobile {
+    @include at-most(tablet) {
       flex-direction: column;
       align-items: center;
     }

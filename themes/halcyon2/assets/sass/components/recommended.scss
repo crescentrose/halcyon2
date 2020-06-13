@@ -1,9 +1,9 @@
 .recommended {
-  @include mobile {
+  @include at-most(mobile) {
     width: 100%;
   }
 
-  @include web {
+  @include at-least(tablet) {
     max-width: $spacing-absolute-unit-2;
   }
 
@@ -14,7 +14,7 @@
     padding: 0;
 
     .card { 
-      @include web {
+      @include at-least(tablet) {
         flex-basis: 100%;
       }
       

@@ -4,11 +4,11 @@
  * Its main purpose is to display a Post Preview component.
  */
 .post-list {
-  @include web {
+  @include at-least(tablet) {
     padding-top: 3rem;
   }
 
-  @include mobile {
+  @include at-most(mobile) {
     min-width: 100%;
   }
 

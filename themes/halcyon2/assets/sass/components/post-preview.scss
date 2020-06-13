@@ -5,7 +5,7 @@ section.post-preview {
 
   &.vertical {
     max-width: 60vw;
-    @include mobile {
+    @include at-most(mobile) {
       max-width: 100%;
     }
   }
@@ -29,7 +29,7 @@ section.post-preview {
     display: block;
     margin-bottom: $spacing-tiny-3;
 
-    @include mobile {
+    @include at-most(mobile) {
       font-size: $font-h3;
     }
   }

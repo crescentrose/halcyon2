@@ -17,7 +17,7 @@ h1 {
   font-size: $font-h1;
   margin-bottom: $spacing-small-1;
 
-  @include mobile {
+  @include at-most(mobile) {
     // h1 is too large on smaller phone sizes, it takes up half of the screen
     // for no good reason
     font-size: $font-h2;
@@ -27,7 +27,7 @@ h1 {
 h2 {
   font-size: $font-h2;
   margin-bottom: $spacing-tiny-3;
-  @include mobile {
+  @include at-most(mobile) {
     font-size: $font-h3;
   }
 }

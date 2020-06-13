@@ -7,11 +7,11 @@
   article {
     font-size: var(--font-content);
 
-    @include mobile {
-      width: 100%;
+    @include at-most(desktop) {
+      max-width: 100%;
     }
 
-    @include large-web {
+    @include at-least(large-desktop) {
       max-width: $spacing-absolute-unit-2;
     }
 

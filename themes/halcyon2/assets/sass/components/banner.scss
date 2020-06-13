@@ -10,11 +10,11 @@ header.banner {
   flex-direction: column;
   justify-content: center;
 
-  @include web {
+  @include at-least(tablet) {
     padding: $spacing-small-3;
   }
 
-  @include mobile {
+  @include at-most(mobile) {
     text-align: center;
   }
 
@@ -23,18 +23,18 @@ header.banner {
   }
 
   &.vertical {
-    @include web {
+    @include at-least(tablet) {
       width: 40vw;
       height: 100vh;
     }
 
-    @include mobile {
+    @include at-most(mobile) {
       margin: $spacing-tiny-2 0 $spacing-tiny-2 0;
     }
   }
 
   &.horizontal {
-    @include large-web {
+    @include at-least(tablet) {
       padding: 0 $spacing-tiny-2 0 $spacing-tiny-2;
       max-width: $spacing-absolute-unit-2;
       text-align: center;
@@ -42,10 +42,10 @@ header.banner {
 
     &.with-cover-image {
       // Accommodate for banner image and navigation
-      @include web {
+      @include at-least(tablet) {
         margin-top: $spacing-xl-1 + $spacing-medium-1;
       }
-      @include mobile {
+      @include at-most(mobile) {
         margin-top: $spacing-large-2 + $spacing-medium-1;
       }
 
@@ -57,11 +57,11 @@ header.banner {
         object-fit: cover;
         width: 100%;
 
-        @include web {
+        @include at-least(tablet) {
           height: $spacing-xl-1;
         }
 
-        @include mobile {
+        @include at-most(mobile) {
           height: $spacing-large-2;
         }
       }

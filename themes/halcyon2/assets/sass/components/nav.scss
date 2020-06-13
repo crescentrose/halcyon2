@@ -10,17 +10,17 @@ nav {
       padding: 0;
       text-transform: lowercase;
 
-      @include mobile {
+      @include at-most(mobile) {
         text-align: center;
       }
 
       li {
-        @include web {
+        @include at-least(tablet) {
           display: block;
           margin-bottom: $spacing-tiny-2;
         }
 
-        @include mobile {
+        @include at-most(mobile) {
           display: inline-block;
           margin: 0 $spacing-tiny-2 0 $spacing-tiny-2;
         }
@@ -32,7 +32,7 @@ nav {
       height: auto;
 
       // This would be fun!
-      // @include web {
+      // @include at-least(tablet) {
       //   @media screen and (prefers-color-scheme: light) {
       //     z-index: 10;
       //     margin-bottom: -74.5px;
@@ -40,7 +40,7 @@ nav {
       //   }
       // }
 
-      @include mobile {
+      @include at-most(mobile) {
         margin-left: auto;
         margin-right: auto;
       }
@@ -62,11 +62,11 @@ nav {
     .container {
       padding: 0 0 0 $spacing-small-3;
 
-      @include web {
+      @include at-least(large-desktop) {
         min-width: $spacing-absolute-unit-2;
       }
 
-      @include mobile {
+      @include at-most(desktop) {
         min-width: 100%;
         flex-flow: row nowrap;
       }
@@ -75,7 +75,7 @@ nav {
     img.logo {
       height: $spacing-small-3;
       padding-right: $spacing-small-1;
-      @include mobile {
+      @include at-most(mobile) {
         padding-top: $spacing-tiny-2;
       }
     }
