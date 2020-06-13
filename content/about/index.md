@@ -43,6 +43,9 @@ One of the goals was also to keep the website as accessible as possible. Please
 reach out with suggestions if you're having trouble accessing the content, and
 I'll do everything I can to make it right.
 
+The Halcyon bird, affectionately known as *Birb*, has been designed by the
+wonderful [Lucy](https://unsplash.com/@liusaydh).
+
 # Copyright Notices
  
 Every article on this blog is licensed under the [Creative Commons
