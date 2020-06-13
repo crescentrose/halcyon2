@@ -52,6 +52,9 @@
   </head>
 
   <body>
+    {{- block "nav" . }}
+      {{ partial "nav.html" . }}
+    {{- end }}
     {{- block "main" . }}{{- end }}
     {{- partial "footer.html" . -}}
   </body>

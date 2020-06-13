@@ -11,8 +11,8 @@
       width: 100%;
     }
 
-    @include web {
-      width: $spacing-absolute-unit-2;
+    @include large-web {
+      max-width: $spacing-absolute-unit-2;
     }
 
     margin-bottom: $spacing-small-3;

@@ -34,24 +34,24 @@ header.banner {
   }
 
   &.horizontal {
-    @include web {
+    @include large-web {
       padding: 0 $spacing-tiny-2 0 $spacing-tiny-2;
-      width: $spacing-absolute-unit-2;
+      max-width: $spacing-absolute-unit-2;
       text-align: center;
     }
 
     &.with-cover-image {
-      // Accommodate for banner image
+      // Accommodate for banner image and navigation
       @include web {
-        margin-top: $spacing-xl-1;
+        margin-top: $spacing-xl-1 + $spacing-medium-1;
       }
       @include mobile {
-        margin-top: $spacing-large-2;
+        margin-top: $spacing-large-2 + $spacing-medium-1;
       }
 
       img.cover {
         position: absolute;
-        top: 0;
+        top: $spacing-medium-1;
         left: 0;
         z-index: -10;
         object-fit: cover;

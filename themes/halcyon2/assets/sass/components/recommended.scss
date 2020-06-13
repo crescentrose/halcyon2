@@ -1,0 +1,26 @@
+.recommended {
+  @include mobile {
+    width: 100%;
+  }
+
+  @include web {
+    max-width: $spacing-absolute-unit-2;
+  }
+
+  .container {
+    display: flex;
+    align-items: stretch;
+    margin: 0;
+    padding: 0;
+
+    .card { 
+      @include web {
+        flex-basis: 100%;
+      }
+      
+      h4 {
+        margin: 0;
+      }
+    }
+  }
+}

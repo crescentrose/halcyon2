@@ -1,5 +1,4 @@
 {{ define "main" }}
-
 <div class="vertical post container">
   <article>
     <header class="horizontal banner with-cover-image" role="banner">
@@ -23,8 +22,32 @@
 
   {{ partial "share.html" . }}
 
-  <div class="return-link" role="navigation">
-    <a href="{{ "/" | relURL }}">← Return to home</a>
+  <div class="recommended">
+    <h3>Read more! It's good for you</h3>
+    <div class="horizontal container">
+      {{ with .PrevInSection }}
+      <div class="card">
+        <span class="meta">Previous post</span>
+        <a href="{{ .Permalink }}">
+          <h4>{{ .Title }}</h4>
+        </a>
+        <p class="summary">
+          {{ .Summary }}
+        </p>
+      </div>
+      {{ end }}
+      {{ with .NextInSection }}
+      <div class="card">
+        <span class="meta">Next post</span>
+        <a href="{{ .Permalink }}">
+          <h4>{{ .Title }}</h4>
+        </a>
+        <p class="summary">
+          {{ .Summary }}
+        </p>
+      </div>
+      {{ end }}
+    </div>
   </div>
 </div>
 
