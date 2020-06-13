@@ -1,0 +1,11 @@
+@import '../config';
+
+/* Used as a `span` in various situations, usually post previews and posts
+ * proper.
+ */
+
+.meta {
+  color: var(--color-muted);
+  text-transform: uppercase;
+  font-size: $font-metadata;
+}

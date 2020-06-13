@@ -1,0 +1,8 @@
+@import '../config';
+
+blockquote {
+  margin-left: 0;
+  border-left: 5px solid var(--color-extra-muted);
+  padding-left: $spacing-small-1;
+  font-weight: lighter;
+}

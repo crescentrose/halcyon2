@@ -41,12 +41,8 @@
     <meta name="theme-color" content="#1d4d7f">
 
     {{ $style := resources.Get "sass/main.scss" | toCSS | minify | fingerprint }}
-    {{ $darkStyle := resources.Get "sass/dark.scss" | toCSS | minify | fingerprint }}
-    <link rel="preload" as="style" href="{{ $darkStyle.Permalink }}">
     <link rel="preload" as="style" href="{{ $style.Permalink }}">
-
     <link rel="stylesheet" href="{{ $style.Permalink }}">
-    <link rel="stylesheet" href="{{ $darkStyle.Permalink }}" media="screen and (prefers-color-scheme: dark)">
 
     {{ range .AlternativeOutputFormats -}}
     {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}

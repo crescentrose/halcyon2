@@ -1,0 +1,47 @@
+@import '../config';
+
+/* A navigation component is a flexible horizontal/vertical component which
+ * renders a navigation menu (duh) with a logo, logo text and links or
+ * additional text.
+ */
+nav {
+  ul {
+    padding: 0;
+    text-transform: lowercase;
+
+    @include mobile {
+      text-align: center;
+    }
+
+    li {
+      @include web {
+        display: block;
+        margin-bottom: $spacing-tiny-2;
+      }
+
+      @include mobile {
+        display: inline-block;
+        margin: 0 $spacing-tiny-2 0 $spacing-tiny-2;
+      }
+    }
+  }
+
+  .logo {
+    width: 96px;
+    height: auto;
+
+    // This would be fun!
+    // @include web {
+    //   @media screen and (prefers-color-scheme: light) {
+    //     z-index: 10;
+    //     margin-bottom: -74.5px;
+    //     margin-left: 103px;
+    //   }
+    // }
+
+    @include mobile {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}

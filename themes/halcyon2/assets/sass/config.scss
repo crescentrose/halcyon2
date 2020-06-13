@@ -1,0 +1,86 @@
+:root {
+  // Font Faces
+  --font-title: 'Source Code Pro',
+    'SFMono-Regular',
+    'Consolas',
+    'Liberation Mono',
+    'Menlo',
+    'Courier New',
+    'Courier',
+    monospace;
+
+  // Colors
+  --color-title: #1E1E1E;
+  --color-content: #364156;
+  --color-background: #F7FBFC;
+  --color-light: #747c8b;
+  --color-muted: #B5B9C1;
+  --color-extra-muted: #e8e9eb;
+
+  --color-label-background: #FDEF8D;
+  --color-label-content: #A29331;
+
+  @media screen and (prefers-color-scheme: dark) {
+    --color-title: #F7FBFC;
+    --color-content: #D5D5D5;
+    --color-background: #1E1E1E;
+    --color-muted:  #888888;
+    --color-extra-muted: #272727;
+    --color-label-background: #2E2A0E;
+    --color-label-content:  #FDEF8D;
+  }
+}
+
+// Font Sizes
+$font-base: 18px;
+
+$font-h1: 2.5rem;
+$font-h2: 2rem;
+$font-h3: 1.5rem;
+$font-h4: 1.25rem;
+$font-h5: 1.25rem;
+$font-h6: 1.25rem;
+$font-emphasis: 1.25rem;
+$font-content: 1.25rem;
+$font-metadata: 0.75rem;
+$font-tiny: 0.5rem;
+
+// Spacing
+$spacing-tiny-1: 0.25rem;
+$spacing-tiny-2: 0.5rem;
+$spacing-tiny-3: 0.75rem;
+$spacing-small-1: 1rem;
+$spacing-small-2: 1.5rem;
+$spacing-small-3: 2rem;
+$spacing-medium-1: 3rem;
+$spacing-medium-2: 4rem;
+$spacing-medium-3: 6rem;
+$spacing-large-1: 8rem;
+$spacing-large-2: 12rem;
+$spacing-large-3: 16rem;
+$spacing-xl-1: 24rem;
+$spacing-xl-2: 32rem;
+$spacing-xl-3: 40rem;
+$spacing-absolute-unit-1: 48rem;
+$spacing-absolute-unit-2: 60rem;
+
+@font-face {
+    font-family: 'Source Code Pro';
+    src: local('Source Code Pro Bold'), local('SourceCodePro-Bold'),
+        url('/fonts/SourceCodePro-Bold.woff2') format('woff2'),
+        url('/fonts/SourceCodePro-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: auto;
+}
+
+@font-face {
+    font-family: 'Source Code Pro';
+    src: local('Source Code Pro'), local('SourceCodePro-Regular'),
+        url('/fonts/SourceCodePro-Regular.woff2') format('woff2'),
+        url('/fonts/SourceCodePro-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: auto;
+}
+

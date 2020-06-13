@@ -1,0 +1,8 @@
+@import '../config';
+
+footer {
+  text-align: center;
+  font-size: $font-metadata;
+  color: var(--color-light);
+  margin: $spacing-small-1;
+}

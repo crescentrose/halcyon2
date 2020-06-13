@@ -1,0 +1,17 @@
+@import '../config';
+
+/* A figure is an illustration or a photo as a part of a post. It's a piece of
+ * content, not a generic image that can be used for decoration.
+ */
+figure {
+  img {
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  figcaption {
+    font-size: $font-metadata;
+    text-align: center;
+  }
+}

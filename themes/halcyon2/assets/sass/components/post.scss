@@ -1,0 +1,24 @@
+@import '../config';
+
+/* A post component contains the actual post text in an Article tag, alongside
+ * additional controls such as sharing or in-post navigation.
+ */
+.post.container {
+  article {
+    font-size: var(--font-content);
+
+    @include mobile {
+      width: 100%;
+    }
+
+    @include web {
+      width: $spacing-absolute-unit-2;
+    }
+
+    margin-bottom: $spacing-small-3;
+  }
+
+  .return-link {
+    margin-top: $spacing-small-3;
+  }
+}
