@@ -66,9 +66,15 @@ license](https://github.com/adobe-fonts/source-code-pro/blob/release/LICENSE.md)
 
 The Halcyon blog does not store cookies with personally identifying data, and
 does not collect any personal data otherwise. The site is hosted with
-[Render](http://render.com), so I have no insight into the server logs. I'm not
-using any advertising, analytics, or telemetry tools. No requests to any third
-parties are being made from my end, as it should be.
+[Render](http://render.com), so I have no insight into the server logs. 
+
+I am currently trialing [Plausible](https://plausible.io) as a privacy-focused,
+ethical analytics solution. I believe in supporting small companies and not
+selling out your privacy to the likes of Google - Plausible does not use
+fingerprinting or cookies and claims not to share collected data with third
+parties or mine or otherwise harvest your private data. You can read up on
+[their privacy and data policy
+here](https://plausible.io/data-policy#how-we-count-unique-users-without-cookies).
 
 If you participate in comments, mentions, or other interactive parts of the
 blog, I will only store and process the data that you explicitly agree to share.
