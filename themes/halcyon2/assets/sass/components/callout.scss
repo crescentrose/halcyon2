@@ -1,0 +1,18 @@
+@import '../config';
+
+aside.callout {
+  margin-top: $spacing-small-2;
+  background-color: var(--color-extra-muted);
+  padding: $spacing-small-1 $spacing-small-1 $spacing-small-1 $spacing-medium-1;
+  position: relative;
+
+  .icon {
+    word-break: normal;
+    position: absolute;
+    display: inline;
+    left: $spacing-tiny-3;
+    top: $spacing-tiny-3;
+    font-size: $font-h3;
+    width: $spacing-medium-1;
+  }
+}

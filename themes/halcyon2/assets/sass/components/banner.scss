@@ -1,0 +1,71 @@
+@import '../config';
+
+/* A banner is a flexible component that can be either horizontal or vertical,
+ * with a cover image in its horizontal configuration or with a logo and
+ * metadata in its vertical configuration. In both cases it spans the full
+ * direction of the viewport.
+ */
+header.banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @include at-least(tablet) {
+    padding: $spacing-small-3;
+  }
+
+  @include at-most(mobile) {
+    text-align: center;
+  }
+
+  h1 {
+    text-transform: lowercase;
+  }
+
+  &.vertical {
+    @include at-least(tablet) {
+      width: 40vw;
+      height: 100vh;
+    }
+
+    @include at-most(mobile) {
+      margin: $spacing-tiny-2 0 $spacing-tiny-2 0;
+    }
+  }
+
+  &.horizontal {
+    @include at-least(tablet) {
+      padding: 0 $spacing-tiny-2 0 $spacing-tiny-2;
+      max-width: $spacing-absolute-unit-2;
+      text-align: center;
+    }
+
+    &.with-cover-image {
+      // Accommodate for banner image and navigation
+      @include at-least(tablet) {
+        margin-top: $spacing-xl-1 + $spacing-medium-1;
+      }
+      @include at-most(mobile) {
+        margin-top: $spacing-large-2 + $spacing-medium-1;
+      }
+
+      img.cover {
+        position: absolute;
+        top: $spacing-medium-1;
+        left: 0;
+        z-index: -10;
+        object-fit: cover;
+        width: 100%;
+
+        @include at-least(tablet) {
+          height: $spacing-xl-1;
+        }
+
+        @include at-most(mobile) {
+          height: $spacing-large-2;
+        }
+      }
+    }
+
+  }
+}

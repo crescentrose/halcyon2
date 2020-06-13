@@ -1,0 +1,36 @@
+@import '../config';
+
+/* This specialized component represents one post in a Post List component. */
+section.post-preview {
+
+  &.vertical {
+    max-width: 60vw;
+    @include at-most(mobile) {
+      max-width: 100%;
+    }
+  }
+  margin-bottom: $spacing-medium-1;
+
+  .title {
+    margin: 0.25rem 0 0.25rem 0;
+    font-family: var(--font-title);
+    font-weight: 700;
+    color: var(--color-title);
+    font-size: $font-h2;
+
+    // Smaller screens don't like large titles so this ensures they show up
+    // properly regardless of screen size.
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+    word-break: break-word;
+
+    display: block;
+    margin-bottom: $spacing-tiny-3;
+
+    @include at-most(mobile) {
+      font-size: $font-h3;
+    }
+  }
+}

@@ -1,8 +1,7 @@
 {{ define "main" }}
-
 <div class="vertical post container">
-  <article class="with-cover-image">
-    <header class="horizontal banner" role="banner">
+  <article>
+    <header class="horizontal banner with-cover-image" role="banner">
       {{ $coverPath := .Params.cover }}
       {{ $cover := .Resources.GetMatch (string $coverPath) }}
       {{ if $cover }}
@@ -21,21 +20,36 @@
     </div>
   </article>
 
-  <button class="share" aria-controls="share-grid" aria-expanded="false">
-    <svg 
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-      tabindex="-1"
-      viewBox="0 0 24 24">
-      <path d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/>
-    </svg>
-    share
-  </button>
-
   {{ partial "share.html" . }}
 
-  <div class="return-link" role="navigation">
-    <a href="{{ "/" | relURL }}">← Return to home</a>
+  <div class="recommended">
+    {{ if (isset . "PrevInSection") | or (isset . "NextInSection") }}
+    <h3>Read more! It's good for you</h3>
+    {{ end }}
+    <div class="horizontal container">
+      {{ with .PrevInSection }}
+      <div class="card">
+        <span class="meta">Previous post</span>
+        <a href="{{ .Permalink }}">
+          <h4>{{ .Title }}</h4>
+        </a>
+        <p class="summary">
+          {{ .Summary }}
+        </p>
+      </div>
+      {{ end }}
+      {{ with .NextInSection }}
+      <div class="card">
+        <span class="meta">Next post</span>
+        <a href="{{ .Permalink }}">
+          <h4>{{ .Title }}</h4>
+        </a>
+        <p class="summary">
+          {{ .Summary }}
+        </p>
+      </div>
+      {{ end }}
+    </div>
   </div>
 </div>
 

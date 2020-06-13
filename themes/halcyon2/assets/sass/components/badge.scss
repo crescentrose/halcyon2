@@ -1,0 +1,16 @@
+@import '../config';
+/* Badges are labels that can be used as tags, categories or anything in
+ * between
+ */
+
+.badge {
+  color: var(--color-label-content);
+  font-size: $font-metadata;
+  text-transform: uppercase;
+
+  border-bottom: 2px solid var(--color-label-content);
+  background-color: var(--color-label-background);
+
+  padding: $spacing-tiny-1;
+  margin-right: $spacing-small-1;
+}

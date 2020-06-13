@@ -1,0 +1,72 @@
+@import '../config';
+
+/* An icon is a generic component that can either stand on its own as an SVG
+ * element, as an action or a link to something, or as a part of an icons
+ * section (`.icons`)
+ */
+.icon {
+  &a {
+    text-decoration: none;
+  }
+
+  &.small {
+    svg {
+      width: $font-content;
+      height: $font-content;
+    }
+  }
+
+  &.medium {
+    svg {
+      width: $font-h3;
+      height: $font-h3;
+    }
+  }
+  &.large {
+    svg {
+      width: $font-h2;
+      height: $font-h2;
+    }
+  }
+
+  svg {
+    fill: var(--color-title);
+  }
+
+  svg:hover {
+    fill: var(--color-content);
+  }
+}
+
+.icons {
+  .icon {
+    margin-right: $spacing-small-1;
+  }
+
+  &.small {
+    .icon > svg {
+      width: $font-content;
+      height: $font-content;
+    }
+  }
+
+  &.medium {
+    .icon > svg {
+      width: $font-h3;
+      height: $font-h3;
+    }
+  }
+
+  &.large {
+    .icon > svg {
+      width: $font-h2;
+      height: $font-h2;
+    }
+  }
+
+  .icon:last-child {
+    svg {
+      margin-right: 0;
+    }
+  }
+}

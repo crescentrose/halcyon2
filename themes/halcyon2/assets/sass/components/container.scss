@@ -1,0 +1,34 @@
+@import '../config';
+
+/* A container is a generic flexbox that can be either horizontal or vertical on
+ * desktop, but is always vertical on mobile. It includes a little bit of
+ * padding so that elements are not stuck to each other.
+ */
+.container {
+  display: flex;
+
+  @include at-least(desktop) {
+    margin: $spacing-small-1;
+    padding: $spacing-small-1;
+  }
+
+  @include at-most(tablet) {
+    padding: $spacing-tiny-3;
+  }
+
+  &.horizontal {
+    @include at-least(desktop) {
+      flex-direction: row;
+    }
+
+    @include at-most(tablet) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &.vertical {
+    flex-direction: column;
+    align-items: center;
+  }
+}

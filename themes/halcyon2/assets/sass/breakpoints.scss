@@ -1,0 +1,43 @@
+@mixin at-least($device) {
+  @if $device == "mobile" {
+    @content
+  } @else if $device == "tablet" {
+    @media screen and (min-width: 576px) {
+      @content
+    }
+  } @else if $device == "desktop" {
+    @media screen and (min-width: 768px) {
+      @content
+    }
+  } @else if $device == "large-desktop" {
+    @media screen and (min-width: 992px) {
+      @content
+    }
+  } @else if $device == "extra-large-desktop" {
+    @media screen and (min-width: 1200px) {
+      @content
+    }
+  }
+}
+
+@mixin at-most($device) {
+  @if $device == "mobile" {
+    @media screen and (max-width: 575.98px) {
+      @content
+    }
+  } @else if $device == "tablet" {
+    @media screen and (max-width: 767.98px) {
+      @content
+    }
+  } @else if $device == "desktop" {
+    @media screen and (max-width: 991.98px) {
+      @content
+    }
+  } @else if $device == "large-desktop" {
+    @media screen and (max-width: 1119.98px) {
+      @content
+    }
+  } @else if $device == "extra-large-desktop" {
+    @content
+  }
+}

@@ -1,406 +1,60 @@
 @charset 'utf-8';
 
-$color-title: #1E1E1E;
-$color-content: #364156;
-$color-background: #F7FBFC;
-$color-light: #747c8b;
-$color-muted: #B5B9C1;
-$color-extra-muted: #e8e9eb;
-
-$color-label-background: #FDEF8D;
-$color-label-content: #A29331;
-
-$font-title:
-  'Source Code Pro',
-  'SFMono-Regular',
-  'Consolas',
-  'Liberation Mono',
-  'Menlo',
-  'Courier New',
-  'Courier',
-  monospace;
-
-$font-content:
-  system-ui,
-  -apple-system,
-  BlinkMacSystemFont,
-  'Segoe UI',
-  'Roboto',
-  'Oxygen',
-  'Ubuntu',
-  'Cantarell',
-  'Helvetica Neue',
-  'Helvetica',
-  'Arial',
-  sans-serif;
-
-$breakpoint-mobile: 835px;
-$breakpoint-web: 836px;
-
-@use './reset';
+@import './reset';
 @import './syntax';
+@import './config';
+@import './breakpoints';
 
-@font-face {
-    font-family: 'Source Code Pro';
-    src: local('Source Code Pro Bold'), local('SourceCodePro-Bold'),
-        url('/fonts/SourceCodePro-Bold.woff2') format('woff2'),
-        url('/fonts/SourceCodePro-Bold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-    font-display: auto;
-}
-
-@font-face {
-    font-family: 'Source Code Pro';
-    src: local('Source Code Pro'), local('SourceCodePro-Regular'),
-        url('/fonts/SourceCodePro-Regular.woff2') format('woff2'),
-        url('/fonts/SourceCodePro-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: auto;
-}
+@import './components/badge';
+@import './components/banner';
+@import './components/blockquote';
+@import './components/button';
+@import './components/callout';
+@import './components/card';
+@import './components/code';
+@import './components/container';
+@import './components/figure';
+@import './components/footer';
+@import './components/header';
+@import './components/icon';
+@import './components/link';
+@import './components/list';
+@import './components/meta';
+@import './components/nav';
+@import './components/post';
+@import './components/post-list';
+@import './components/post-preview';
+@import './components/recommended';
+@import './components/share';
 
 body {
-  background-color: $color-background;
-  color: $color-content;
+  // For some reason, this doesn't work if I put it in `config`, yet everything
+  // else does.
+  --font-content: system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    'Roboto',
+    'Oxygen',
+    'Ubuntu',
+    'Cantarell',
+    'Helvetica Neue',
+    'Helvetica',
+    'Arial',
+    sans-serif;
+
+  background-color: var(--color-background);
+  color: var(--color-content);
+  font-family: var(--font-content);
+  font-size: $font-base;
 
   line-height: 1.6;
-
-  font-family: $font-content;
-  font-size: 14pt;
   font-feature-settings: "kern" 1;
   font-kerning: normal;
-
   letter-spacing: 0.01em;
   word-spacing: 0.001em;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: $font-title;
-  font-weight: 700;
-  color: $color-title;
-}
-
-h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-h2 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-h3 {
-  font-size: 1.5rem;
-}
-
-.container {
-  display: flex;
-  margin: 10px;
-
-  @media screen and (min-width: $breakpoint-web) {
-    padding: 10px;
-  }
-
-  &.horizontal {
-    @media screen and (min-width: $breakpoint-web) {
-      flex-direction: row;
-    }
-
-    @media screen and (max-width: $breakpoint-mobile) {
-      flex-direction: column;
-      align-items: center;
-    }
-  }
-
-  &.vertical {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-header.banner {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  @media screen and (min-width: $breakpoint-web) {
-    padding: 2rem;
-  }
-
-  @media screen and (max-width: $breakpoint-mobile) {
-    text-align: center;
-  }
-
-  &.vertical {
-    @media screen and (min-width: $breakpoint-web) {
-      width: 40vw;
-      height: 100vh;
-    }
-
-    @media screen and (max-width: $breakpoint-mobile) {
-      margin: 10px 0 10px 0;
-    }
-  }
-
-  &.horizontal {
-    @media screen and (min-width: $breakpoint-web) {
-      padding: 0 10px 0 10px;
-      width: $breakpoint-web;
-      text-align: center;
-    }
-
-    img.cover {
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: -10;
-      object-fit: cover;
-      height: 400px;
-      width: 100%;
-
-      @media screen and (max-width: $breakpoint-mobile) {
-        height: 200px;
-      }
-    }
-  }
-
-  h1 {
-    text-transform: lowercase;
-  }
-
-  .logo {
-    width: 96px;
-    height: auto;
-
-    // This would be fun!
-    // @media screen and (min-width: $breakpoint-web) {
-    //   @media screen and (prefers-color-scheme: light) {
-    //     z-index: 10;
-    //     margin-bottom: -74.5px;
-    //     margin-left: 103px;
-    //   }
-    // }
-
-    @media screen and (max-width: $breakpoint-mobile) {
-      margin-left: auto;
-      margin-right: auto;
-    }
-  }
-}
-
-.post-list {
-  @media screen and (min-width: $breakpoint-web) {
-    padding-top: 3rem;
-  }
-
-  @media screen and (max-width: $breakpoint-web) {
-    min-width: 100%;
-  }
-
-  padding-bottom: 3rem;
-}
-
-.badge {
-  border-bottom: 2px solid $color-label-content;
-  background-color: $color-label-background;
-  color: $color-label-content;
-  padding: 0.1rem 0.5rem 0.1rem 0.5rem;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  margin-right: 1rem;
-}
-
-section.post-preview {
-  max-width: 60vw;
-
-  @media screen and (max-width: $breakpoint-web) {
-    max-width: 100%;
-  }
-  margin-bottom: 3rem;
-
-  * > h2 {
-    margin: 0.25rem 0 0.25rem 0;
-  }
-}
-
-.meta {
-  color: $color-muted;
-  text-transform: uppercase;
-  font-size: 0.75rem;
-  margin-top: -0.5rem;
-}
-
-a {
-  color: $color-title;
-  text-decoration-skip-ink: auto;
-  -webkit-text-decoration-skip: ink;
-
-}
-
-a:hover > * {
-  color: $color-content;
-}
-
-nav {
-  ul {
-    padding: 0;
-    text-transform: lowercase;
-
-    @media screen and (max-width: $breakpoint-mobile) {
-      text-align: center;
-    }
-
-    li {
-      @media screen and (min-width: $breakpoint-web) {
-        display: block;
-        margin-bottom: 0.5rem;
-      }
-
-      @media screen and (max-width: $breakpoint-mobile) {
-        display: inline-block;
-        margin: 0 0.5rem 0 0.5rem;
-      }
-    }
-  }
-}
-
-footer {
-  text-align: center;
-  font-size: 0.75rem;
-  color: $color-light;
-  margin: 10px;
-}
-
-.post {
-  article {
-    @media screen and (max-width: $breakpoint-mobile) {
-      width: 100%;
-    }
-
-    @media screen and (min-width: $breakpoint-web) {
-      width: $breakpoint-web;
-    }
-
-    margin-bottom: 2rem;
-
-    &.with-cover-image {
-      @media screen and (min-width: $breakpoint-web) {
-        margin-top: 400px; // Accommodate for banner image
-      }
-
-      @media screen and (max-width: $breakpoint-mobile) {
-        margin-top: 200px; // Accommodate for banner image
-      }
-    }
-
-    aside {
-      margin-top: 1.6rem;
-
-      &.callout {
-        background-color: $color-extra-muted;
-        padding: 20px 20px 20px 50px;
-        position: relative;
-
-        .icon {
-          word-break: normal;
-          position: absolute;
-          display: inline;
-          left: 15px;
-          top: 15px;
-          font-size: 25px;
-          width: 25px;
-        }
-      }
-    }
-  }
-
-  .return-link {
-    margin-top: 2rem;
-  }
-}
-
-button {
-  padding: 0.75rem;
-  border-radius: 7px;
-  font-size: 1rem;
-  background-color: $color-background;
-  color: $color-title;
-  border: 1px solid $color-title;
-  display: inline-flex;
-  align-items: center;
-
-  svg {
-    margin-right: 0.5em;
-    width: 1em;
-    height: 1em;
-    fill: $color-title;
-  }
-}
-
-a.icon {
-  text-decoration: none;
-
-  svg {
-    width: 1.5rem;
-    height: 1.5rem;
-    fill: $color-title;
-    margin-right: 1rem;
-  }
-
-  svg:hover {
-    fill: $color-content;
-  }
-}
-
-.icons > a:last-child > svg {
-  margin-right: 0;
-}
-
-.share-grid {
-  font-size: 1.5rem;
-  padding: 5px;
-  display: none;
-}
-
-div.chroma {
-  padding: 1em;
-  font-family: $font-title;
-}
-
-pre {
-  margin: 0;
-}
-
-.chroma {
-  overflow: scroll;
-  padding: 1rem;
-}
-
-li {
-  margin-bottom: 0.5rem;
-}
-
-figure > img {
-  max-width: 100%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-figure > figcaption {
-  font-size: 0.75rem;
-  text-align: center;
-}
-
-pre {
-  margin-bottom: 1rem;
-}
-
-blockquote {
-  margin-left: 0;
-  border-left: 5px solid $color-extra-muted;
-  padding-left: 1rem;
-  font-weight: lighter;
+p {
+  margin-bottom: $spacing-small-1;
 }

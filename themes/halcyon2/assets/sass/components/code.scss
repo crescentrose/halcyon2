@@ -1,0 +1,11 @@
+@import '../config';
+
+pre {
+  margin-bottom: $spacing-small-1;
+}
+
+.chroma {
+  font-family: var(--font-title);
+  overflow-y: scroll;
+  padding: $spacing-small-1;
+}

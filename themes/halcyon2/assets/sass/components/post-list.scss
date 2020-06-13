@@ -1,0 +1,16 @@
+@import  '../config';
+
+/* A post list is a specialized component that holds post previews.
+ * Its main purpose is to display a Post Preview component.
+ */
+.post-list {
+  @include at-least(tablet) {
+    padding-top: 3rem;
+  }
+
+  @include at-most(mobile) {
+    min-width: 100%;
+  }
+
+  padding-bottom: 3rem;
+}
