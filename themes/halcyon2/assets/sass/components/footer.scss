@@ -2,7 +2,9 @@
 
 footer {
   text-align: center;
-  font-size: $font-metadata;
+  font-size: $font-baseline;
   color: var(--color-light);
-  margin: $spacing-small-1;
+  padding: $spacing-medium-3;
+  background-color: var(--color-extra-muted);
+  margin-top: $spacing-small-1;
 }

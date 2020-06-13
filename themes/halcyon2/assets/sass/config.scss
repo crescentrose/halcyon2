@@ -21,6 +21,9 @@
   --color-label-background: #FDEF8D;
   --color-label-content: #A29331;
 
+  --color-shadow-light: rgba(0, 0, 0, .15);
+  --color-shadow-lighter: rgba(0, 0, 0, .12);
+
   @media screen and (prefers-color-scheme: dark) {
     --color-title: #F7FBFC;
     --color-content: #D5D5D5;
@@ -43,6 +46,7 @@ $font-h5: 1.25rem;
 $font-h6: 1.25rem;
 $font-emphasis: 1.25rem;
 $font-content: 1.25rem;
+$font-baseline: 1rem;
 $font-metadata: 0.75rem;
 $font-tiny: 0.5rem;
 
