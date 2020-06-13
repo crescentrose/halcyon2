@@ -23,7 +23,9 @@
   {{ partial "share.html" . }}
 
   <div class="recommended">
+    {{ if (isset . "PrevInSection") | or (isset . "NextInSection") }}
     <h3>Read more! It's good for you</h3>
+    {{ end }}
     <div class="horizontal container">
       {{ with .PrevInSection }}
       <div class="card">
