@@ -211,7 +211,7 @@ Instead of doing this, we can instruct Rust to do the same thing using the `?` o
 ```rust
 fn thing_doer() -> Result<u8, CustomError> {
     value = do_something()?;
-    do_something_else(value)?
+    do_something_else(value)
 }
 ```
 
