@@ -1,5 +1,11 @@
 @import '../config';
 
+code {
+  font-family: var(--font-title);
+  background-color: var(--color-extra-muted);
+  padding: $spacing-tiny-1;
+}
+
 pre {
   margin-bottom: $spacing-small-1;
 }
@@ -8,4 +14,9 @@ pre {
   font-family: var(--font-title);
   overflow-y: scroll;
   padding: $spacing-small-1;
+
+  code {
+    background-color: inherit;
+    padding: 0;
+  }
 }
