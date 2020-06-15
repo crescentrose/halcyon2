@@ -1,18 +1,24 @@
 ---
 title: "Automatic Dark Mode Switching for Vim and Terminal"
-date: 2020-06-12T12:00:00+02:00
+date: 2020-06-15T12:00:00+02:00
 draft: false
 categories: ["Vim", "Workflow"]
 cover: "images/night.jpg"
 cover_alt: "a dark night sky full of stars"
 description: "Dark mode rules, but it can cause eye-strain during the day. With some terminal trickery, we can have both!"
-summary: "Dark mode rules, but it cau cause eye-strain during the day. I've developed a relatively simple method to bring automatic dark mode switching to Vim and in your terminal."
+summary: "Dark mode rules, but it can cause eye-strain during the day. Using a small CLI tool you can change Vim's and your terminal's color schemes based on the time of the day!"
 ---
+# Summary
+
+I wrote a small and fast CLI program to let you determine accurate sunset and sunrise times in your area so that you can dynamically change your terminal's theme as well as Vim's color scheme based on time of day. Got no time for the pleasantries? [**Click here to skip ahead to the code**](#automatically-switch-between-light-and-dark-mode-on-sunset).
+
+# Introduction
+
 Dark mode has long been a staple in many developer setups, but it's only recently started to gain mainstream traction. Following macOS's lead a year earlier, Windows 10, iOS 13, and Android 10 all released dark mode support pretty much simultaneously, which made many app developers rush to implement dark mode for their applications.
 
-This new hotness soon trickled down to the web. After Safari's initial push into the space with the `prefers-dark-interface` media query, we quickly got an actual specification with [prefers-color-scheme](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme), which lets websites adapt to the OS theme settings. Luckily, [browsers adopted this relatively quickly](https://caniuse.com/#search=prefers-color-scheme). Actually, this very blog also adjusts to your OS settings - give it a shot!
+This new hotness soon trickled down to the web. We have a [prefers-color-scheme](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) media query, which lets websites adapt to the OS theme settings. There's also [surprisingly high](https://caniuse.com/#search=prefers-color-scheme) browser support for such a new feature. This very blog also adjusts to your OS settings - give it a shot!
 
-I love dark mode, and not being blinded by Slack or many other apps while working at night is **lovely**, but the jury is still out on whether using dark mode is better or healthy for your eyes. There are people to whom this is obvious: if you have astigmatism, you're probably reading this in light mode and cursing dark-by-default apps. However, it took me solid six months of squinting at my screen during daylight to recognize that the problem isn't my worsening eyesight but that *the words are too damn dim*.
+**I love dark mode**, and not being blinded by Slack or many other apps while working at night is **lovely**, but the jury is still out on whether using dark mode is better or healthy for your eyes. There are people to whom this is obvious: if you have astigmatism, you're probably reading this in light mode and cursing dark-by-default apps. However, it took me solid six months of squinting at my screen during daylight to recognize that the problem isn't my worsening eyesight but that *the words are too damn dim*.
 
 That's right - if you're like most of the civilized society and you generally work during the day, in a well-lit room full of sunlight (as you should! [Sunshine makes you happy](https://www.healthline.com/health/depression/benefits-sunlight)) dark mode is **a literal nightmare**. Or a daymare. **Are you reading this during the day?** Come on, switch off that dark mode toggle. Try it out.
 
@@ -20,11 +26,14 @@ Did you?
 
 Well, I can hear you grumbling, but after the initial blast of light, I'm sure your eyes breathed a proverbial sigh of relief.
 
-However, **light mode objectively still sucks at night**. Most operating systems have an "automatic" toggle for dark mode, which turns your screen dark whenever the sun goes down. Unfortunately, I work primarily out of a terminal. When the ancient humans hooked up teletypes to computers back in the stone age, they were more concerned about things like being able to edit files and having a functioning file system than aesthetics.
+However, **light mode honestly still sucks at night**. Most operating systems have an "automatic" toggle for dark mode, which turns your screen dark whenever the sun goes down. Unfortunately, I work primarily out of a terminal. When the ancient humans hooked up teletypes to computers back in the stone age, they were more concerned about things like being able to edit files and having a functioning file system than aesthetics.
 
 Times have changed, however, and with the recent advances in technology, we can give our eyes a rest during the night while still exercising them properly during the day.
 
-{{<figure src="images/darkmode.png" caption="With the powers of dark mode and light mode combined, I am a fully functional human being!">}}
+{{<aside icon="👀">}}
+Coincidentally, Kev Quirk published an interesting article titled [Is Dark Mode Such A Good Idea?](https://kevq.uk/is-dark-mode-such-a-good-idea/) just as I was in the middle of writing this post. It's an interesting read so go ahead and check it out once you're done here!
+{{</aside>}}
+
 
 # Dynamically changing colors in the terminal
 
@@ -62,7 +71,9 @@ If you've only been skimming until now, it's time for you to tune in because thi
 
 There are plenty of methods you can use to determine whether your system is in light mode or dark mode. If you're on macOS, you can use AppleScript - however, the script takes around 300ms to run, which is going to be pretty noticeable when booting up another shell or Vim instance. So, I've developed [a small Rust program named Sunshine](https://github.com/crescentrose/sunshine) that lets you **determine the accurate sunrise and sunset times for a given location in your system's timezone**. Plus, it was an excuse to write Rust code, which I'll always take given the opportunity.
 
-You can install Sunshine via Homebrew or manually. It knows how to fetch the location from your Mac's GPS (if you have a Mac), from your public IP, or a name, or you can pass the coordinates yourself. It's also very fast. On cached locations or for GPS or given the coordinates, you are usually going to get a result within 25 milliseconds.
+You can install Sunshine via Homebrew or manually. It knows how to fetch the location from your Mac's GPS (if you have a Mac), from your public IP (using [FreeGeoIP API](https://freegeoip.app), or a name (using the [Nominatim API](http://nominatim.openstreetmap.org)), you can pass the coordinates yourself, or, for frequent fliers, combine automatic detection with a sensible fallback.
+
+It's also very fast: if you're using CoreLocation or passing in the coordinates manually, you are going to get a result within 25 milliseconds. Similarly, network queries are cached, so you don't have to worry about that either.
 
 So, how does it fit into the theme of the post? Well, my `zshrc` and `vimrc` both call `sunshine` - this lets me determine whether it's day or night outside. With that knowledge, I can change the theme based on the time of day whenever I open up my terminal or Vim. Using the `--simple` switch, I can easily get just "day" or "night" so that I don't have to do calculations in Bash or Vimscript.
 
