@@ -3,14 +3,24 @@
 /* A post list is a specialized component that holds post previews.
  * Its main purpose is to display a Post Preview component.
  */
-.post-list {
-  @include at-least(tablet) {
-    padding-top: 3rem;
-  }
+.vertical.post-list.container {
+  main.post-list {
+    @include at-least(tablet) {
+      padding-top: 3rem;
+    }
 
-  @include at-most(mobile) {
-    min-width: 100%;
-  }
+    @include at-most(mobile) {
+      min-width: 100%;
+    }
 
-  padding-bottom: 3rem;
+    @include at-most(desktop) {
+      max-width: 100%;
+    }
+
+    @include at-least(large-desktop) {
+      max-width: $spacing-absolute-unit-2;
+    }
+
+    padding-bottom: 3rem;
+  }
 }

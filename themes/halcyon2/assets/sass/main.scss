@@ -55,6 +55,10 @@ body {
   word-spacing: 0.001em;
 }
 
+body {
+  font-size: var(--font-content);
+}
+
 p {
   margin-bottom: $spacing-small-1;
 }
