@@ -1,28 +1,11 @@
 {{ define "main" }}
-
-<div class="horizontal container">
-  {{ partial "nav.html" . }}
+<div class="vertical post-list container">
   <main class="post-list">
+    <h1>{{ .Title }}</h1>
     {{ $posts := .Pages }}
     {{ if gt (len $posts) 0 }}
     {{ range $posts }}
-    <section class="post-preview">
-      <span class="badges">
-        {{ range .Param "categories" }}
-        <span class="badge category">
-          {{ . }}
-        </span>
-        {{ end }}
-      </span>
-      <a href="{{.Permalink}}">
-        <h2>
-          {{.Title}}
-        </h2>
-      </a>
-      <p class="meta">
-      {{.Date.Format "January 2, 2006" }} &mdash; {{.ReadingTime}} minute read
-      </p>
-    </section>
+    {{ partial "post-preview" . }}
     {{ end }}
     {{ else }}
     <section>

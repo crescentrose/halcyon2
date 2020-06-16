@@ -5,8 +5,6 @@
  */
 .post.container {
   article {
-    font-size: var(--font-content);
-
     @include at-most(desktop) {
       max-width: 100%;
     }

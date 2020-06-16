@@ -1,0 +1,16 @@
+<section class="vertical post-preview">
+  <span class="badges">
+    {{ range .Param "categories" }}
+    <span class="badge post-label">
+      {{ . }}
+    </span>
+    {{ end }}
+  </span>
+  <a href="{{.Permalink}}" class="title">
+    {{.Title}}
+  </a>
+  <p>{{.Summary}}</p>
+  <p class="meta">
+    {{.Date.Format "January 2, 2006" }} &mdash; {{.ReadingTime}} minute read
+  </p>
+</section>

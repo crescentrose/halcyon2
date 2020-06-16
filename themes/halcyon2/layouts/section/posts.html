@@ -1,0 +1,25 @@
+{{ define "main" }}
+<div class="vertical post-list container">
+  <main class="post-list">
+    <section class="post-preview">
+      <h1>Older posts</h1>
+      <p>Looking for something not as fresh?</p>
+    </section>
+    {{ $posts := after 5 .Pages }}
+    {{ if gt (len $posts) 0 }}
+    {{ range $posts }}
+    {{ partial "post-preview" . }}
+    <section class="post-preview">
+      <div class="return-link" role="navigation">
+        <a href="{{ "/" | relURL }}">← Back to present times</a>
+      </div>
+    </section>
+    {{ end }}
+    {{ else }}
+    <section>
+      There are no posts here yet!
+    </section>
+    {{ end }}
+  </main>
+</div>
+{{ end }}
