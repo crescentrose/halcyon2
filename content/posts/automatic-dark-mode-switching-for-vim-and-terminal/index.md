@@ -1,5 +1,5 @@
 ---
-title: "Automatic Dark Mode Switching for Vim and Terminal"
+title: "Automatic Dark Mode Switching For Vim And The Terminal"
 date: 2020-06-15T12:00:00+02:00
 draft: false
 categories: ["Vim", "Workflow"]
