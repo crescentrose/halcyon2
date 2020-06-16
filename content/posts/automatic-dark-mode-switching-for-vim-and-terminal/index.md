@@ -94,6 +94,8 @@ endfunction
 
 function! Sunshine(timer)
   if executable("sunshine")
+    " Add your desired location here instead of '@45 15' (I probably could have
+    " made it into a variable)
     let job = job_start(["sunshine", "-s", "@45 15"], {"out_cb": "ChangeColorScheme"})
   else
     call DarkMode()
