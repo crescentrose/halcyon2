@@ -134,8 +134,4 @@ Now you can code as happily during the day as you would during the night!
 
 ---
 
-{{<aside icon="🇳🇱">}}
-Hey! I am looking for a job in or around **Utrecht, Netherlands**. If you know someone who is looking for a backend web developer with 5 years of experience, please let me know - my email is on [the about page](/about). Thanks!
-{{</aside>}}
-
 *Cover photo by [Nathan Anderson](https://unsplash.com/photos/L95xDkSSuWw) on [Unsplash](https://unsplash.com/@nathananderson)*

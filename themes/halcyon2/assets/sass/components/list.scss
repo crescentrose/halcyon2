@@ -1,5 +1,11 @@
 @import  '../config';
 
+ul {
+  list-style-type: "—️";
+}
+
 li {
   margin-bottom: 0.5rem;
+  margin-left: 2rem;
+  padding-left: 1rem;
 }

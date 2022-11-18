@@ -40,6 +40,10 @@
     <meta name="msapplication-TileColor" content="#2b5797">
     <meta name="theme-color" content="#1d4d7f">
 
+    {{ $reset := resources.Get "sass/reset.scss" | toCSS | minify | fingerprint }}
+    <link rel="preload" as="style" href="{{ $reset.Permalink }}">
+    <link rel="stylesheet" href="{{ $reset.Permalink }}">
+
     {{ $style := resources.Get "sass/main.scss" | toCSS | minify | fingerprint }}
     <link rel="preload" as="style" href="{{ $style.Permalink }}">
     <link rel="stylesheet" href="{{ $style.Permalink }}">
