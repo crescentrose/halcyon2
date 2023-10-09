@@ -10,7 +10,7 @@
     }
 
     @include at-least(large-desktop) {
-      max-width: $spacing-absolute-unit-2;
+      max-width: 800px;
     }
 
     margin-bottom: $spacing-small-3;

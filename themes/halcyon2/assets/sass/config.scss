@@ -28,15 +28,15 @@
     --color-title: #F7FBFC;
     --color-content: #D5D5D5;
     --color-background: #1E1E1E;
-    --color-muted:  #888888;
+    --color-muted: #888888;
     --color-extra-muted: #272727;
     --color-label-background: #2E2A0E;
-    --color-label-content:  #FDEF8D;
+    --color-label-content: #FDEF8D;
   }
 }
 
 // Font Sizes
-$font-base: 22px;
+$font-base: 18px;
 
 $font-h1: 2.5rem;
 $font-h2: 2rem;
@@ -70,21 +70,21 @@ $spacing-absolute-unit-1: 48rem;
 $spacing-absolute-unit-2: 60rem;
 
 @font-face {
-    font-family: 'Source Code Pro';
-    src: local('Source Code Pro Bold'), local('SourceCodePro-Bold'),
-        url('/fonts/SourceCodePro-Bold.woff2') format('woff2'),
-        url('/fonts/SourceCodePro-Bold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-    font-display: auto;
+  font-family: 'Source Code Pro';
+  src: local('Source Code Pro Bold'), local('SourceCodePro-Bold'),
+    url('/fonts/SourceCodePro-Bold.woff2') format('woff2'),
+    url('/fonts/SourceCodePro-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: auto;
 }
 
 @font-face {
-    font-family: 'Source Code Pro';
-    src: local('Source Code Pro'), local('SourceCodePro-Regular'),
-        url('/fonts/SourceCodePro-Regular.woff2') format('woff2'),
-        url('/fonts/SourceCodePro-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: auto;
+  font-family: 'Source Code Pro';
+  src: local('Source Code Pro'), local('SourceCodePro-Regular'),
+    url('/fonts/SourceCodePro-Regular.woff2') format('woff2'),
+    url('/fonts/SourceCodePro-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: auto;
 }

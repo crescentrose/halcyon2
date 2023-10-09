@@ -9,6 +9,7 @@ nav {
     ul {
       padding: 0;
       text-transform: lowercase;
+      list-style-type: none;
 
       @include at-most(mobile) {
         text-align: center;
@@ -24,6 +25,8 @@ nav {
           display: inline-block;
           margin: 0 $spacing-tiny-2 0 $spacing-tiny-2;
         }
+
+        margin-left: 0;
       }
     }
 
